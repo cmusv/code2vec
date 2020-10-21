@@ -6,6 +6,7 @@ from typing import NamedTuple, Optional, List, Dict, Tuple, Iterable
 from common import common
 from vocabularies import Code2VecVocabs, VocabType
 from config import Config
+from pathlib import Path
 
 
 class ModelEvaluationResults(NamedTuple):
@@ -100,9 +101,16 @@ class Code2VecModelBase(abc.ABC):
         self._load_or_create_inner_model()
 
     def save(self, model_save_path=None):
+        # TODO: path handling is not OS-agnostic
+
         if model_save_path is None:
             model_save_path = self.config.MODEL_SAVE_PATH
-        model_save_dir = '/'.join(model_save_path.split('/')[:-1])
+
+
+        # model_save_dir = '/'.join(model_save_path.split('/')[:-1])
+        model_save_dir = Path(model_save_path).parent
+
+
         if not os.path.isdir(model_save_dir):
             os.makedirs(model_save_dir, exist_ok=True)
         self.vocabs.save(self.config.get_vocabularies_path_from_model_path(model_save_path))

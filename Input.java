@@ -1,7 +1,8 @@
-int f(int n) {
-    if (n == 0) {
-        return 1; 
-    } else {
-        return n * f(n-1);
+boolean f(Object target) {
+    for (Object elem: this.elements) {
+        if (elem.equals(target)) {
+            return true;
+        }
     }
+    return false;
 }

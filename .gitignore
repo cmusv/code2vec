@@ -5,3 +5,11 @@
 **/.idea/**
 *.tar.gz
 **/log.txt
+data/
+raw-data/
+extract-test/
+*tar*
+*.bin
+.vscode
+__pycache__
+venv

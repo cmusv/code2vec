@@ -4,6 +4,7 @@ import logging
 from argparse import ArgumentParser
 import sys
 import os
+from pathlib import Path
 
 
 class Config:
@@ -203,7 +204,8 @@ class Config:
 
     @property
     def model_load_dir(self):
-        return '/'.join(self.MODEL_LOAD_PATH.split('/')[:-1])
+        # return '/'.join(self.MODEL_LOAD_PATH.split('/')[:-1])
+        return Path(self.MODEL_LOAD_PATH).parent
 
     @property
     def entire_model_load_path(self) -> Optional[str]:
