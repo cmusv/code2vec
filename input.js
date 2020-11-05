@@ -1,5 +1,6 @@
-const { help } = require('commander')
-
 function foo () {
-  console.log('hello world')
+  for (let i=0; i < 100; i++) {
+    console.log(i)
+  }
+  return true
 }
