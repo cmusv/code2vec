@@ -1,6 +1,3 @@
-function foo () {
-  for (let i=0; i < 100; i++) {
-    console.log(i)
-  }
-  return true
+function anon () {
+  console.log('hello world there')
 }
