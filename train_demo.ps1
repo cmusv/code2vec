@@ -1,0 +1,1 @@
+python code2vec.py --data data\testing\testing --test data\testing\testing.val.c2v --save models\testing\saved_model
